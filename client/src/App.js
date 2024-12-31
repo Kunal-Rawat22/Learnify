@@ -1,11 +1,24 @@
 
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Layout from './Layout';
+import IndexPage from './Pages/IndexPage/IndexPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='text-3xl font-bold'>dbnkhdfsjkhdjsh</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        {/* <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/account/:subpage?" element={<AccountPage />} />
+        <Route path="/account/:subpage/:action" element={<AccountPage />} />
+        <Route path="/rooms/:subpage" element={<RoomPage />} />
+        <Route path="/book/stays/:subpage?" element={<BookingPage />} />
+        <Route path="/payment/success?" element={<PaymentSuccess />} />
+        <Route path="/booking/:subpage" element={<BookingConfirmation />} /> */}
+      </Route>
+    </Routes>
   );
 }
 
